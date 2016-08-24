@@ -11,7 +11,7 @@
       <input type='file' name='foto' id='foto' class='hidden'>
     </form>
     <div class="col-md-12 text-justify" id="zonaSecciones">
-      
+
     </div>
   </section>
 

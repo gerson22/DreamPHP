@@ -225,7 +225,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s" id="gpoGaleria">
-          
+
         </div>
       </div>
     </div>

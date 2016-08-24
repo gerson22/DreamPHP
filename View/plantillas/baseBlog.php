@@ -116,7 +116,7 @@
                   &nbsp;&nbsp;
                   <span>Cursos</span>
               </a>
-          </li>          
+          </li>
           <li class="toggle-menu">
               <a href="/login/logout/cerrar-sesion">
                   <i class="fa fa-reply"></i>
@@ -391,12 +391,12 @@
 
 
 
-            
+
             $("#user_assigned").click(function(){
                 $("#modal_assigned_user").modal('show');
             });
 
-            
+
              $("#reg_user").click(function(){
                    var $btn = this;
                    if($("#frm_data_person").valid()){
@@ -432,7 +432,7 @@
 
 
 
-            
+
             $("#close_modal_assigned").click(function(){
                 $("#modal_assigned_user").modal('hide');
                 $("#cursos").children('.checkbox_cursos').each(function(){
@@ -461,7 +461,7 @@
                     console.log(error);
                 });
             });
-            
+
             $("#asign_user").click(function(e){
                 e.preventDefault();
                 //--- ./Variable para saber que cursos se asignarán

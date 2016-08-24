@@ -28,7 +28,7 @@
                             </h5>
                             <i class="fa fa-clock-o"></i><small id="created_at"></small>
 
-            
+
                             <hr>
                             <div class="visible-xs">
                                 <span class="counter-wraper">
@@ -302,7 +302,7 @@
 {%block js%}
 <script type="text/javascript" src="/assets/js/js/Create.js"></script>
 <script type="text/javascript" >
-    
+
     $(document).ajaxStart(function(){
         $("#loading").removeClass("hide");
     });
@@ -310,40 +310,40 @@
         $("#loading").addClass("hide");
     });
     $(document).on('ready',__init);
-    
-    
+
+
     function __init()
     {
         /*-----------------------------------
-        | Variables Globales 
+        | Variables Globales
         |------------------------------------
         | Esta son las variables que se utilizaran
         | a lo largo del actividad dentro de esta
         | seccion
         |-------------------------------------*/
-        
+
             //---Esta variable  ayudará a evitar otras llamadas a ajax cuando no se requieren
             var finishCallAjax = true;
-        
+
             //---Me contabiliza el numero de comentarios dentro del Post
             var contComment = 0;
-        
+
             //---Esta variable ayudará a saber si ya se terminaron los comentarios dentro de ese post
             var finishComment = false;
-        
+
         /*-----------------------------------
         | Carga de Contenido                 |
         |------------------------------------|
         | Inicializamos las funciones        |
-        | para poder cargar el post          |  
-        | encontrar sus likes y comentarios  | 
+        | para poder cargar el post          |
+        | encontrar sus likes y comentarios  |
         ------------------------------------*/
             getLikes();
             findPost();
             getComment();
-        
+
         //-------------------------------------
-        
+
             //---- FUNCIONES -------//
         //-------------------------------------
 
@@ -370,7 +370,7 @@
         }
         //---End Function findPost
 
-        
+
         //--Function  para obtner los likes del post
 
         function getLikes(){
@@ -395,7 +395,7 @@
         }
         //---End Function getLikes
 
-        //--Cargar comentarios del post 
+        //--Cargar comentarios del post
         function getComment(){
             finishCallAjax = false;
             $.ajax({
@@ -420,7 +420,7 @@
                 });
 
                 $("#total-comment").text(contComment).addClass("badge");
-                
+
             }).fail(function(error,status,statusText){
                 console.log(error);
                 console.log(status);
@@ -428,16 +428,16 @@
             });
         }
         //---End Function getComment
-        
+
         //-------------------------------------
-        
+
             //---- CLOUSHURES -------//
         //-------------------------------------
-            
-         //---Al momento de scrollear todos los post se cargan los faltantes 
+
+         //---Al momento de scrollear todos los post se cargan los faltantes
             $(window).scroll(function(e) {
                 e.preventDefault();
-                
+
 	           if($(window).scrollTop() + $(window).height() == $(document).height()){
                    var lastComment = $("#comments").children().last().attr("data-id-comment");
                    var start = (lastComment == null || lastComment == undefined || lastComment == '') ? 0 : (parseFloat(lastComment)-1);
@@ -493,12 +493,12 @@
                            });
                         }
                    }
-                   
+
                 }
             });
             //--Al darle like en el btn_like se registrará un like al post
             $("#btn_like").click(function(){
-                
+
                 $.ajax({
                     url:'/like/setLikes/all',
                     method:'POST',
@@ -537,7 +537,7 @@
                 });
             });
 
-            
+
             moment().calendar('es', {
                 sameDay: '[Hoy]',
                 nextDay: '[Mañana]',
