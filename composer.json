@@ -1,0 +1,7 @@
+{   
+    "name":"framework/dreamPHP",
+    "author":"Dreamsteam",
+    "require": {
+        "twig/twig": "dev-master"
+    }
+}
