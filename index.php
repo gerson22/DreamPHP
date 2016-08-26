@@ -18,15 +18,15 @@
         - Requerimos el autoload para asi poder
         - cargar las clases en tiempo de ejecucion
         ----------------------------------------*/
-        require_once 'autoload.php';
+        require_once 'app/start/autoload.php';
         Autoloader::run();
 
+
         /*---------------------------------------
-        Inicializamos el Routing para las rutas
-        agradables y accedemos a las clases con
-        sus namespace
+        Inicializamos la app con los requerido
+        por default
         ----------------------------------------*/
-        Routing::run(new Request());
+        App::run();
 
 
 
