@@ -1,0 +1,12 @@
+{
+    "name" : "Routing",
+    "version" : "v.1.0",
+    "author" : [
+        {
+            "name":"Gerson Efraín Isaías Rivera",
+            "email":"gerson.isaias@curiosity.com.mx"
+        }
+    ],
+    "description": "Sistema de ruteo para php",
+    "keywords": ["SystemRouting"],
+}
