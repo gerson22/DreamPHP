@@ -12,8 +12,9 @@ class Route
 
     private $methods = array('GET', 'POST', 'HEAD', 'PUT', 'DELETE');
 
-    public function __construct($expr, $callback, $methods = null)
+    public function __construct($expr, $callback, $methods = null,$code = 200)
     {
+        http_response_code($code);
         // Allow an optional trailing backslash
         $this->expr = '#^' . $expr . '/?$#';
         $this->callback = $callback;
