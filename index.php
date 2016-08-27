@@ -26,7 +26,7 @@
         Inicializamos la app con los requerido
         por default
         ----------------------------------------*/
-        App::run();
+        app::run();
 
 
 
