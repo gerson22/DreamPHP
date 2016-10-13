@@ -32,7 +32,9 @@ class Router
     }
 
     public static function Error404($callback){
-        self::add('/*.', $callback);
+        $router = self::singleton();
+        $router->routes[] = new Route('/.*', $callback,NULL,404);
+
     }
 
     public static function all($expr, $callback, $methods = null)
@@ -44,7 +46,7 @@ class Router
     public static function  add($expr, $callback, $methods = null)
     {
         $router = self::singleton();
-        $router->all($expr, $callback, $methods);
+        $router::all($expr, $callback, $methods);
     }
 
     public static function get($expr, $callback)
