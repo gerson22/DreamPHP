@@ -6,7 +6,7 @@
         public static function run(){
             spl_autoload_register(function($class){
 
-                include_once 'vendor/fileRead/File.php';
+                require_once 'vendor/DreamPHP/fileRead/File.php';
                 $loadClass = new vendor\fileRead\File();
                 $loadClass->searchFile(__DIR__.'/../..',$class.".php");
                 if(is_array($loadClass->routes)){
