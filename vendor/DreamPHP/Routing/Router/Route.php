@@ -39,7 +39,6 @@ class Route
         else{
             $callbackStr = explode(':',$this->callback);
             $controller = new $callbackStr[0];
-            var_dump($callbackStr[1]);
             return call_user_func_array(array($controller,$callbackStr[1]),array_slice($this->matches, 1));
 
         }
