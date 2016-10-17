@@ -10,12 +10,14 @@ class Route
 
     private $matches;
 
+    private $code;
+
     private $methods = array('GET', 'POST', 'HEAD', 'PUT', 'DELETE');
 
     public function __construct($expr, $callback, $methods = null,$code = 200)
     {
-        http_response_code($code);
         // Allow an optional trailing backslash
+        $this->code = $code;
         $this->expr = '#^' . $expr . '/?$#';
         $this->callback = $callback;
         if ($methods !== null) {
@@ -39,6 +41,7 @@ class Route
         else{
             $callbackStr = explode(':',$this->callback);
             $controller = new $callbackStr[0];
+            http_response_code($code);
             return call_user_func_array(array($controller,$callbackStr[1]),array_slice($this->matches, 1));
 
         }
